@@ -1,13 +1,12 @@
-// Import packages
 const dns = require("dns");
 dns.setServers(["8.8.8.8", "1.1.1.1"]);
+
 require("dotenv").config();
 
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 
-// Create Express application
 const app = express();
 
 // Middleware
@@ -19,18 +18,12 @@ let users = [];
 let bookings = [];
 let messages = [];
 
-// ----------------------------------
 // HOME API
-// ----------------------------------
-
 app.get("/", (req, res) => {
   res.send("Welcome to TravelMate Backend!");
 });
 
-// ----------------------------------
 // USER REGISTRATION API
-// ----------------------------------
-
 app.post("/api/register", (req, res) => {
   const { name, email, password } = req.body;
 
@@ -55,10 +48,7 @@ app.post("/api/register", (req, res) => {
   });
 });
 
-// ----------------------------------
 // USER LOGIN API
-// ----------------------------------
-
 app.post("/api/login", (req, res) => {
   const { email, password } = req.body;
 
@@ -87,10 +77,7 @@ app.post("/api/login", (req, res) => {
   });
 });
 
-// ----------------------------------
 // DESTINATIONS API
-// ----------------------------------
-
 app.get("/api/destinations", (req, res) => {
   const destinations = [
     {
@@ -116,10 +103,7 @@ app.get("/api/destinations", (req, res) => {
   res.status(200).json(destinations);
 });
 
-// ----------------------------------
 // CREATE BOOKING API
-// ----------------------------------
-
 app.post("/api/bookings", (req, res) => {
   const { travellerName, travellerEmail, destination, travelDate, travellers } =
     req.body;
@@ -153,18 +137,12 @@ app.post("/api/bookings", (req, res) => {
   });
 });
 
-// ----------------------------------
 // GET ALL BOOKINGS API
-// ----------------------------------
-
 app.get("/api/bookings", (req, res) => {
   res.status(200).json(bookings);
 });
 
-// ----------------------------------
 // CANCEL BOOKING API
-// ----------------------------------
-
 app.delete("/api/bookings/:id", (req, res) => {
   const bookingId = Number(req.params.id);
 
@@ -183,10 +161,7 @@ app.delete("/api/bookings/:id", (req, res) => {
   });
 });
 
-// ----------------------------------
 // CONTACT API
-// ----------------------------------
-
 app.post("/api/contact", (req, res) => {
   const { name, email, subject, message } = req.body;
 
@@ -211,20 +186,18 @@ app.post("/api/contact", (req, res) => {
   });
 });
 
-// ----------------------------------
-// CONNECT MONGODB AND START SERVER
-// ----------------------------------
-
+// START SERVER
 const PORT = process.env.PORT || 5000;
 
+app.listen(PORT, () => {
+  console.log(`TravelMate server running on port ${PORT}`);
+});
+
+// CONNECT TO MONGODB
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
     console.log("MongoDB connected successfully!");
-
-    app.listen(PORT, () => {
-      console.log(`TravelMate server running on port ${PORT}`);
-    });
   })
   .catch((error) => {
     console.error("MongoDB connection failed:", error.message);
