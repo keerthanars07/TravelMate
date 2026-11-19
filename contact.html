@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - TravelMate</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h2 class="logo">TravelMate</h2>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="destination.html">Destinations</a>
+        <a href="mybookings.html">My Bookings</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <section class="auth-container">
+      <div class="auth-box">
+        <h2>Contact Us</h2>
+        <p>We would love to hear from you!</p>
+
+        <form id="contactForm">
+          <input type="text" id="contactName" placeholder="Your Name" />
+
+          <input type="email" id="contactEmail" placeholder="Your Email" />
+
+          <input type="text" id="contactSubject" placeholder="Subject" />
+
+          <textarea
+            id="contactMessage"
+            placeholder="Write your message"
+            rows="5"
+          ></textarea>
+
+          <button type="submit">Send Message</button>
+
+          <p id="contactResponse"></p>
+        </form>
+
+        <a href="index.html">Back to Home</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 TravelMate. All Rights Reserved.</p>
+    </footer>
+
+    <script src="contact.js"></script>
+  </body>
+</html>

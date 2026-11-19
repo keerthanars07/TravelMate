@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Your Trip - TravelMate</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h2 class="logo">TravelMate</h2>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="destination.html">Destinations</a>
+        <a href="login.html">Login</a>
+      </nav>
+    </header>
+
+    <section class="auth-container">
+      <div class="auth-box">
+        <h2>Book Your Trip</h2>
+        <p>Plan your next adventure!</p>
+
+        <form id="bookingForm">
+          <input type="text" id="travellerName" placeholder="Your Full Name" />
+
+          <input type="email" id="travellerEmail" placeholder="Email Address" />
+
+          <select id="destinationSelect">
+            <option value="">Select Destination</option>
+            <option value="New York">New York</option>
+            <option value="Paris">Paris</option>
+            <option value="Bali">Bali</option>
+          </select>
+
+          <label for="travelDate">Travel Date</label>
+          <input type="date" id="travelDate" />
+
+          <input
+            type="number"
+            id="travellers"
+            placeholder="Number of Travellers"
+            min="1"
+          />
+
+          <button type="submit">Confirm Booking</button>
+
+          <p id="bookingMessage"></p>
+        </form>
+
+        <a href="index.html">Back to Home</a>
+      </div>
+    </section>
+
+    <script src="booking.js"></script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - TravelMate</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="auth-container">
+      <div class="auth-box">
+        <h2>Create Your Account</h2>
+        <p>Join TravelMate and explore the world!</p>
+
+        <form id="registerForm">
+          <input type="text" id="name" placeholder="Full Name" />
+
+          <input type="email" id="email" placeholder="Email Address" />
+
+          <input type="password" id="password" placeholder="Password" />
+
+          <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Confirm Password"
+          />
+
+          <button type="submit">Register</button>
+
+          <p id="registerMessage"></p>
+        </form>
+
+        <p>
+          Already have an account?
+          <a href="login.html">Login here</a>
+        </p>
+
+        <a href="index.html">Back to Home</a>
+      </div>
+    </section>
+
+    <script src="auth.js"></script>
+  </body>
+</html>
