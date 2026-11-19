@@ -215,7 +215,7 @@ app.post("/api/contact", (req, res) => {
 // CONNECT MONGODB AND START SERVER
 // ----------------------------------
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 mongoose
   .connect(process.env.MONGO_URI)
